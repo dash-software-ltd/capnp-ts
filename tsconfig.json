@@ -5,9 +5,9 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "incremental": true,
-    "lib": ["es2015"],
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "lib": ["ESNext"],
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "newLine": "LF",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
@@ -18,7 +18,7 @@
     "sourceMap": true,
     "strict": true,
     "stripInternal": true,
-    "target": "es2015"
+    "target": "ESNext"
   },
   "include": ["packages/*/src/**/*", "packages/*/test/**/*"]
 }

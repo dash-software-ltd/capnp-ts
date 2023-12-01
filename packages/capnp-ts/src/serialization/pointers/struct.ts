@@ -106,7 +106,7 @@ export class Struct extends Pointer {
   static readonly setText = setText;
   static readonly testWhich = testWhich;
 
-  readonly _capnp!: _Struct;
+  declare readonly _capnp: _Struct;
 
   /**
    * Create a new pointer to a struct.
