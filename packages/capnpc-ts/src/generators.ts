@@ -524,12 +524,6 @@ export function generateStructFieldMethods(
   if (get) {
     const expressions = [get];
 
-    members.push(createMethod(`get${properName}`, [], jsTypeReference, expressions));
-  }
-  // getFooSafe(): FooType { ... }
-  if (get) {
-    const expressions = [get];
-
     if (union) {
       expressions.unshift(
         f.createCallExpression(f.createPropertyAccessExpression(STRUCT, "testWhich"), __, [
@@ -541,7 +535,7 @@ export function generateStructFieldMethods(
       );
     }
 
-    members.push(createMethod(`get${properName}Safe`, [], jsTypeReference, expressions));
+    members.push(createMethod(`get${properName}`, [], jsTypeReference, expressions));
   }
 
   // hasFoo(): boolean { ... }
@@ -695,29 +689,7 @@ export function generateStructNode(ctx: CodeGeneratorFileContext, node: s.Node, 
     ts.SyntaxKind.PlusToken,
     f.createCallExpression(f.createIdentifier("super.toString"), __, [])
   );
-  const tsm = createMethod("toString", [], STRING_TYPE, [toStringExpression], true);
-  members.push(tsm);
-  //if (hasUnnamedUnion && fields.length > 0) {
-  //  let uu: ts.Expression | undefined;
-  //  const typee = f.createTypeReferenceNode(getJsType(ctx, fields[0].getSlot().getType(), true), __);
-  //        //f.createPropertyDeclaration(__, [], "3", __, typee, uu as ts.Expression),
-  //members.push(
-  //  f.createPropertyDeclaration(
-  //    __,
-  //    [STATIC, READONLY],
-  //    "_mine",
-  //    __,
-  //    __,
-  //    f.createObjectLiteralExpression(
-  //      [
-  //        f.createPropertyAssignment("displayName", f.createStringLiteral("ff")),
-  //        f.createPropertyAssignment("3", f.createStringLiteral("fff")),
-  //        f.createPropertyAssignment("4", f.createTypeLiteralNode([typee])),
-  //      ]
-  //    )
-  //  )
-  //);
-  //}
+  members.push(createMethod("toString", [], STRING_TYPE, [toStringExpression], true));
 
   if (hasUnnamedUnion) {
     // which(): MyStruct_Which { return __S.getUint16(12, this); }
@@ -760,23 +732,6 @@ export function generateUnnamedUnionEnum(
   const d = f.createEnumDeclaration(__, [EXPORT], `${fullClassName}_Which`, members);
 
   ctx.statements.push(d);
-
-  const m = unionFields
-    .sort(compareCodeOrder)
-    .map((field) =>
-      {
-        let u: ts.Expression | undefined;
-        const type = f.createTypeReferenceNode(getJsType(ctx, field.getSlot().getType(), true), __);
-        //const z = f.createEnumMember(util.c2s(field.getName()), f.createNumericLiteral(Number(2).toString()));
-        //const z = f.createEnumMember(util.c2s(field.getName()), aa);
-        //const z = f.createEnumMember(util.c2s(field.getName()), type, u as ts.Expression);
-        const z = f.createEnumMember(f.createNumericLiteral(field.getDiscriminantValue().toString()), f.createStringLiteral("get" + util.c2t(field.getName())));
-        return z;
-      }
-    );
-  const dd = f.createEnumDeclaration(__, [EXPORT], `${fullClassName}_Classes`, m);
-
-  ctx.statements.push(dd);
 }
 
 export function getImportNodes(ctx: CodeGeneratorFileContext, node: s.Node): s.Node[] {
