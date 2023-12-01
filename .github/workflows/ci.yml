@@ -26,6 +26,8 @@ jobs:
           sudo apt-get install capnproto libcapnp-dev
           npm i -g npm@latest
           npm ci
+      - name: Build
+        run: npm run build
       - name: Lint
         run: npm run lint
       - name: Test
