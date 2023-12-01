@@ -4,7 +4,7 @@
 
 set -exuo pipefail
 
-capnp_version = 0.9.0
+capnp_version=1.0.1.1
 
 curl -O https://capnproto.org/capnproto-c++-${capnp_version}.tar.gz
 tar zxf capnproto-c++-${capnp_version}.tar.gz
