@@ -100,7 +100,7 @@ lint: build
 release: build
 	$(standard)
 
-.PHONY: publish
-publish:
-	$(npm) publish -w capnp-ts
-	$(npm) publish -w capnpc-ts
+# .PHONY: publish
+# publish:
+# 	$(npm) publish -w capnp-ts
+# 	$(npm) publish -w capnpc-ts
