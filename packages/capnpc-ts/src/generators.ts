@@ -175,7 +175,7 @@ export function generateEnumNode(ctx: CodeGeneratorFileContext, node: s.Node): v
     .getEnumerants()
     .toArray()
     .sort(compareCodeOrder)
-    .map((e) => f.createEnumMember(util.c2s(e.getName())));
+    .map((e) => f.createEnumMember(e.getName()));
   const d = f.createEnumDeclaration(__, [EXPORT], getFullClassName(node), members);
 
   ctx.statements.push(d);
@@ -727,7 +727,7 @@ export function generateUnnamedUnionEnum(
   const members = unionFields
     .sort(compareCodeOrder)
     .map((field) =>
-      f.createEnumMember(util.c2s(field.getName()), f.createNumericLiteral(field.getDiscriminantValue().toString()))
+      f.createEnumMember(field.getName(), f.createNumericLiteral(field.getDiscriminantValue().toString()))
     );
   const d = f.createEnumDeclaration(__, [EXPORT], `${fullClassName}_Which`, members);
 

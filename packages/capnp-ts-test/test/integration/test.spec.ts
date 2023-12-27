@@ -5,14 +5,14 @@ import * as T from "./test.capnp.js";
 const FLOAT_TOLERANCE = 0.000001;
 
 void tap.test("TestEnum", (t) => {
-  t.equal(T.TestEnum.FOO, 0);
-  t.equal(T.TestEnum.BAR, 1);
-  t.equal(T.TestEnum.BAZ, 2);
-  t.equal(T.TestEnum.QUX, 3);
-  t.equal(T.TestEnum.QUUX, 4);
-  t.equal(T.TestEnum.CORGE, 5);
-  t.equal(T.TestEnum.GRAULT, 6);
-  t.equal(T.TestEnum.GARPLY, 7);
+  t.equal(T.TestEnum.foo, 0);
+  t.equal(T.TestEnum.bar, 1);
+  t.equal(T.TestEnum.baz, 2);
+  t.equal(T.TestEnum.qux, 3);
+  t.equal(T.TestEnum.quux, 4);
+  t.equal(T.TestEnum.corge, 5);
+  t.equal(T.TestEnum.grault, 6);
+  t.equal(T.TestEnum.garply, 7);
 
   t.end();
 });
@@ -59,8 +59,8 @@ void tap.test("TestAllTypes", (t) => {
   allTypes.initStructField().setInt32Field(-999);
   t.equal(allTypes.getStructField().getInt32Field(), -999);
 
-  allTypes.setEnumField(T.TestEnum.CORGE);
-  t.equal(allTypes.getEnumField(), T.TestEnum.CORGE);
+  allTypes.setEnumField(T.TestEnum.corge);
+  t.equal(allTypes.getEnumField(), T.TestEnum.corge);
 
   allTypes.initVoidList(10);
   t.equal(allTypes.getVoidList().getLength(), 10);
@@ -98,8 +98,8 @@ void tap.test("TestAllTypes", (t) => {
   allTypes.initStructList(3).get(1).setUInt32Field(9999);
   t.equal(allTypes.getStructList().get(1).getUInt32Field(), 9999);
 
-  allTypes.initEnumList(2).set(1, T.TestEnum.FOO);
-  t.equal(allTypes.getEnumList().get(1), T.TestEnum.FOO);
+  allTypes.initEnumList(2).set(1, T.TestEnum.foo);
+  t.equal(allTypes.getEnumList().get(1), T.TestEnum.foo);
 
   t.end();
 });
