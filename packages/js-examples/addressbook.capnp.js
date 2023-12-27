@@ -10,9 +10,9 @@ const capnp_ts_1 = require("capnp-ts");
 exports._capnpFileId = BigInt("0xef1b5abe02e1f8d4");
 var Person_PhoneNumber_Type;
 (function (Person_PhoneNumber_Type) {
-    Person_PhoneNumber_Type[Person_PhoneNumber_Type["MOBILE"] = 0] = "MOBILE";
-    Person_PhoneNumber_Type[Person_PhoneNumber_Type["HOME"] = 1] = "HOME";
-    Person_PhoneNumber_Type[Person_PhoneNumber_Type["WORK"] = 2] = "WORK";
+    Person_PhoneNumber_Type[Person_PhoneNumber_Type["mobile"] = 0] = "mobile";
+    Person_PhoneNumber_Type[Person_PhoneNumber_Type["home"] = 1] = "home";
+    Person_PhoneNumber_Type[Person_PhoneNumber_Type["work"] = 2] = "work";
 })(Person_PhoneNumber_Type = exports.Person_PhoneNumber_Type || (exports.Person_PhoneNumber_Type = {}));
 class Person_PhoneNumber extends capnp_ts_1.Struct {
     getNumber() { return capnp_ts_1.Struct.getText(0, this); }
@@ -26,10 +26,10 @@ Person_PhoneNumber.Type = Person_PhoneNumber_Type;
 Person_PhoneNumber._capnp = { displayName: "PhoneNumber", id: "af663da31c027e0e", size: new capnp_ts_1.ObjectSize(8, 1) };
 var Person_Employment_Which;
 (function (Person_Employment_Which) {
-    Person_Employment_Which[Person_Employment_Which["UNEMPLOYED"] = 0] = "UNEMPLOYED";
-    Person_Employment_Which[Person_Employment_Which["EMPLOYER"] = 1] = "EMPLOYER";
-    Person_Employment_Which[Person_Employment_Which["SCHOOL"] = 2] = "SCHOOL";
-    Person_Employment_Which[Person_Employment_Which["SELF_EMPLOYED"] = 3] = "SELF_EMPLOYED";
+    Person_Employment_Which[Person_Employment_Which["unemployed"] = 0] = "unemployed";
+    Person_Employment_Which[Person_Employment_Which["employer"] = 1] = "employer";
+    Person_Employment_Which[Person_Employment_Which["school"] = 2] = "school";
+    Person_Employment_Which[Person_Employment_Which["selfEmployed"] = 3] = "selfEmployed";
 })(Person_Employment_Which = exports.Person_Employment_Which || (exports.Person_Employment_Which = {}));
 class Person_Employment extends capnp_ts_1.Struct {
     isUnemployed() { return capnp_ts_1.Struct.getUint16(4, this) === 0; }
