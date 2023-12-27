@@ -74,7 +74,7 @@ export function createNestedNodeProperty(node: s.Node): ts.PropertyDeclaration {
 }
 
 export function createUnionConstProperty(fullClassName: string, field: s.Field): ts.PropertyDeclaration {
-  const name = util.c2s(field.getName());
+  const name = field.getName();
   const initializer = f.createPropertyAccessExpression(f.createIdentifier(`${fullClassName}_Which`), name);
 
   return f.createPropertyDeclaration(__, [STATIC, READONLY], name, __, __, initializer);

@@ -58,10 +58,10 @@ class Person_Employment extends capnp_ts_1.Struct {
     which() { return capnp_ts_1.Struct.getUint16(4, this); }
 }
 exports.Person_Employment = Person_Employment;
-Person_Employment.UNEMPLOYED = Person_Employment_Which.UNEMPLOYED;
-Person_Employment.EMPLOYER = Person_Employment_Which.EMPLOYER;
-Person_Employment.SCHOOL = Person_Employment_Which.SCHOOL;
-Person_Employment.SELF_EMPLOYED = Person_Employment_Which.SELF_EMPLOYED;
+Person_Employment.unemployed = Person_Employment_Which.unemployed;
+Person_Employment.employer = Person_Employment_Which.employer;
+Person_Employment.school = Person_Employment_Which.school;
+Person_Employment.selfEmployed = Person_Employment_Which.selfEmployed;
 Person_Employment._capnp = { displayName: "employment", id: "e88780a90af3da0c", size: new capnp_ts_1.ObjectSize(8, 4) };
 class Person extends capnp_ts_1.Struct {
     getId() { return capnp_ts_1.Struct.getUint32(0, this); }
