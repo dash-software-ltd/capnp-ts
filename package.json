@@ -65,7 +65,7 @@
     "printWidth": 120
   },
   "scripts": {
-    "cereal": "capnpc -o ./packages/capnpc-ts/bin/capnpc-ts.js:./gen ./third_party/cereal/*capnp",
+    "cereal": "capnpc -o ./packages/capnpc-ts/bin/capnpc-ts.js:./gen ./third_party/cereal/car.capnp ./third_party/cereal/log.capnp",
     "cereal2": "make build && capnpc -o ./packages/capnpc-ts/bin/capnpc-ts.js:./gen ./third_party/cereal/*capnp",
     "benchmark": "make benchmark",
     "build": "make build",
