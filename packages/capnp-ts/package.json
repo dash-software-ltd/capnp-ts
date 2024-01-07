@@ -18,9 +18,11 @@
     "rpc",
     "typescript"
   ],
-  "main": "./src/index.js",
   "type": "module",
   "types": "./src/index.d.ts",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "scripts": {
     "build": "tsc",
     "postinstall": "npm run build"
