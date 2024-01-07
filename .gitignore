@@ -46,6 +46,7 @@ jspm_packages
 # Build output
 .tmp
 *.d.ts
+!**/types/*.d.ts
 *.map
 *.tsbuildinfo
 packages/*/bin/**/*.d.ts

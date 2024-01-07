@@ -47,4 +47,4 @@ export {
   getUint32Mask,
   getUint64Mask,
   getUint8Mask,
-} from "./serialization";
+} from "./serialization/index.js";

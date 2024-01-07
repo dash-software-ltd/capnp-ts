@@ -1,10 +1,10 @@
 import initTrace from "debug";
 
-import { PTR_ADOPT_WRONG_MESSAGE, PTR_ALREADY_ADOPTED, PTR_INVALID_POINTER_TYPE } from "../../errors";
-import { format } from "../../util";
-import { ListElementSize } from "../list-element-size";
-import { ObjectSize, getWordLength } from "../object-size";
-import { Segment } from "../segment";
+import { PTR_ADOPT_WRONG_MESSAGE, PTR_ALREADY_ADOPTED, PTR_INVALID_POINTER_TYPE } from "../../errors.js";
+import { format } from "../../util.js";
+import { ListElementSize } from "../list-element-size.js";
+import { ObjectSize, getWordLength } from "../object-size.js";
+import { Segment } from "../segment.js";
 import {
   Pointer,
   getTargetListLength,
@@ -21,8 +21,8 @@ import {
   setListPointer,
   setInterfacePointer,
   getListByteLength,
-} from "./pointer";
-import { PointerType } from "./pointer-type";
+} from "./pointer.js";
+import { PointerType } from "./pointer-type.js";
 
 const trace = initTrace("capnp:orphan");
 trace("load");

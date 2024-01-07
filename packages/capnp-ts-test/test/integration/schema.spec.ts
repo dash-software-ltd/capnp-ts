@@ -6,7 +6,7 @@ import tap from "tap";
 
 import * as capnp from "capnp-ts";
 import { CodeGeneratorRequest } from "capnp-ts/src/std/schema.capnp.js";
-import { compareBuffers, readFileBuffer } from "../util";
+import { compareBuffers, readFileBuffer } from "../util/index.js";
 
 const SCHEMA_MESSAGE = readFileBuffer("test/data/schema.bin");
 

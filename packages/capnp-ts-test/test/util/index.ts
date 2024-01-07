@@ -3,7 +3,7 @@ import { readFileSync } from "fs";
 import * as path from "path";
 import { check, CheckOptions, Property } from "testcheck";
 
-import { dumpBuffer, format, pad } from "capnp-ts/src/util";
+import { dumpBuffer, format, pad } from "capnp-ts/src/util.js";
 import { Test } from "tap";
 import initTrace from "debug";
 
@@ -94,6 +94,8 @@ export function logBench(suite: Suite): Suite {
     });
 }
 /* eslint-enable */
+
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 export function readFileBuffer(filePath: string): ArrayBuffer {
   const b = readFileSync(path.join(__dirname, "../../", filePath));

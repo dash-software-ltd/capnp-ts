@@ -1,17 +1,6 @@
-import { pad } from "capnp-ts/src/util";
+import { pad } from "capnp-ts/src/util.js";
 import initTrace from "debug";
-
-// Yep, this is silly. :)
-
-interface Hex2Dec {
-  decToHex(d: string): string;
-  hexToDec(h: string): string;
-}
-
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable @typescript-eslint/unbound-method */
-const { decToHex, hexToDec } = require("hex2dec") as Hex2Dec;
-/* eslint-enable */
+import { decToHex, hexToDec } from "hex2dec";
 
 const trace = initTrace("capnpc:util");
 trace("load");

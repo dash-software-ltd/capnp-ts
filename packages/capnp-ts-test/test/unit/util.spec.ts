@@ -1,10 +1,10 @@
 import tap from "tap";
 import { gen, property } from "testcheck";
 
-import * as C from "capnp-ts/src/constants";
-import { RANGE_INVALID_UTF8 } from "capnp-ts/src/errors";
-import * as util from "capnp-ts/src/util";
-import { compareBuffers, runTestCheck } from "../util";
+import * as C from "capnp-ts/src/constants.js";
+import { RANGE_INVALID_UTF8 } from "capnp-ts/src/errors.js";
+import * as util from "capnp-ts/src/util.js";
+import { compareBuffers, runTestCheck } from "../util/index.js";
 
 const BAD_UTF8 = [
   new Uint8Array([0xff, 0xff]),

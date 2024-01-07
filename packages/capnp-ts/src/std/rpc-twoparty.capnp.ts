@@ -3,8 +3,8 @@
  * compiled output.
  */
 
-import * as capnp from "../index";
-import { ObjectSize as __O, Struct as __S } from "../index";
+import * as capnp from "../index.js";
+import { ObjectSize as __O, Struct as __S } from "../index.js";
 export const _capnpFileId = "a184c7885cdaf2a1";
 export enum Side {
     SERVER,

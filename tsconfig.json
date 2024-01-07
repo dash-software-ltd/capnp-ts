@@ -4,12 +4,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "incremental": true,
     "isolatedModules": true,
     "lib": ["ESNext"],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "newLine": "LF",
+    "newLine": "lf",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "noImplicitReturns": true,
@@ -21,5 +20,5 @@
     "stripInternal": true,
     "target": "ESNext"
   },
-  "include": ["packages/*/src/**/*", "packages/*/test/**/*"]
+  "include": ["packages/*/src/**/*", "packages/*/test/**/*", "packages/*/types/**/*"]
 }

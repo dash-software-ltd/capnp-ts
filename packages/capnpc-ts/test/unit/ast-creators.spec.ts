@@ -1,9 +1,9 @@
 import tap from "tap";
 
-import { readFileBuffer } from "../util";
+import { readFileBuffer } from "../util/index.js";
 import * as capnp from "capnp-ts";
 import * as Schema from "capnp-ts/src/std/schema.capnp.js";
-import { createValueExpression } from "../../src/ast-creators";
+import { createValueExpression } from "../../src/ast-creators.js";
 import ts from "typescript";
 
 const TEST_REQUEST = readFileBuffer("test/data/test-request.bin");

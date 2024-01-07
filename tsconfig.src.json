@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.json",
   "exclude": ["packages/capnp-ts/**/*"],
-  "include": ["packages/*/src/**/*"]
+  "include": ["packages/*/src/**/*", "packages/*/types/**/*"]
 }

@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-require("../src").main();
+import { main } from "../src/index.js";
+await main();

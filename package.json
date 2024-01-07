@@ -1,8 +1,8 @@
 {
   "name": "capnp-ts",
   "description": "Strongly typed Cap'n Proto implementation for the browser and Node.js using TypeScript",
-  "author": "Cameron Clough <cameronjclough@gmail.com>",
-  "contributors": ["jdiaz5513"],
+  "author": "jdiaz5513",
+  "contributors": ["Cameron Clough <cameronjclough@gmail.com>"],
   "homepage": "https://github.com/dash-software-ltd/capnp-ts#readme",
   "bugs": {
     "url": "https://github.com/dash-software-ltd/capnp-ts/issues"
@@ -18,14 +18,13 @@
     "@types/mkdirp": "^1.0.1",
     "@types/node": "^20.10.1",
     "@types/tap": "^15.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/eslint-plugin-tslint": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
     "benchmark": "^2.1.4",
-    "eslint": "^7.26.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.2",
-    "eslint-plugin-jsdoc": "^34.8.2",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsdoc": "^48.0.2",
     "eslint-plugin-no-null": "^1.0.2",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "husky": "^6.0.0",
@@ -36,7 +35,7 @@
     "tap": "^15.0.9",
     "testcheck": "^1.0.0-rc.2",
     "ts-node": "^9.1.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.3.3"
   },
   "husky": {
     "hooks": {
@@ -66,7 +65,6 @@
   },
   "scripts": {
     "cereal": "capnpc -o ./packages/capnpc-ts/bin/capnpc-ts.js:./gen ./third_party/cereal/*capnp",
-    "cereal2": "make build && capnpc -o ./packages/capnpc-ts/bin/capnpc-ts.js:./gen ./third_party/cereal/*capnp",
     "benchmark": "make benchmark",
     "build": "make build",
     "build:watch": "npm run nodemon make build",

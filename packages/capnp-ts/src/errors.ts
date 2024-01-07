@@ -6,7 +6,7 @@
 
 import initTrace from "debug";
 
-import { MAX_SEGMENT_LENGTH } from "./constants";
+import { MAX_SEGMENT_LENGTH } from "./constants.js";
 
 const trace = initTrace("capnp:errors");
 trace("load");

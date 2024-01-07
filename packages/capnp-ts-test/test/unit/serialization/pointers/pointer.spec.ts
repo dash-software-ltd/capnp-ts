@@ -1,7 +1,7 @@
 import tap from "tap";
 
 import { Message, Pointer } from "capnp-ts";
-import * as C from "capnp-ts/src/constants";
+import * as C from "capnp-ts/src/constants.js";
 
 void tap.test("new Pointer()", (t) => {
   const m = new Message();

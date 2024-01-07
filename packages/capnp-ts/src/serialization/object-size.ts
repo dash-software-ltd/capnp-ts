@@ -4,7 +4,7 @@
 
 import initTrace from "debug";
 
-import * as _ from "../util";
+import * as _ from "../util.js";
 
 const trace = initTrace("capnp:object-size");
 trace("load");

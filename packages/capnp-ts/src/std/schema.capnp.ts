@@ -3,8 +3,8 @@
  * compiled output.
  */
 
-import * as capnp from "../index";
-import { ObjectSize as __O, Struct as __S } from "../index";
+import * as capnp from "../index.js";
+import { ObjectSize as __O, Struct as __S } from "../index.js";
 export const _capnpFileId = "d9724c6209c53fa9";
 export class Node_Parameter extends __S {
     static readonly _capnp = { displayName: "Parameter", id: "b9521bccf10fa3b1", size: new __O(0, 1) };

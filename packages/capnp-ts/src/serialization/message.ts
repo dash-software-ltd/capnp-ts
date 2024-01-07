@@ -3,20 +3,20 @@
  */
 
 import initTrace from "debug";
-import { DEFAULT_TRAVERSE_LIMIT, DEFAULT_BUFFER_SIZE } from "../constants";
+import { DEFAULT_TRAVERSE_LIMIT, DEFAULT_BUFFER_SIZE } from "../constants.js";
 import {
   MSG_INVALID_FRAME_HEADER,
   MSG_SEGMENT_OUT_OF_BOUNDS,
   MSG_SEGMENT_TOO_SMALL,
   MSG_NO_SEGMENTS_IN_ARENA,
-} from "../errors";
-import { dumpBuffer, format, padToWord } from "../util";
-import { AnyArena, Arena, MultiSegmentArena, SingleSegmentArena, ArenaKind } from "./arena";
-import { pack, unpack } from "./packing";
-import { Pointer, StructCtor, PointerType, Struct } from "./pointers";
-import { Segment } from "./segment";
-import { getTargetStructSize, validate } from "./pointers/pointer";
-import { resize, initStruct } from "./pointers/struct";
+} from "../errors.js";
+import { dumpBuffer, format, padToWord } from "../util.js";
+import { AnyArena, Arena, MultiSegmentArena, SingleSegmentArena, ArenaKind } from "./arena/index.js";
+import { pack, unpack } from "./packing.js";
+import { Pointer, StructCtor, PointerType, Struct } from "./pointers/index.js";
+import { Segment } from "./segment.js";
+import { getTargetStructSize, validate } from "./pointers/pointer.js";
+import { resize, initStruct } from "./pointers/struct.js";
 
 const trace = initTrace("capnp:message");
 trace("load");

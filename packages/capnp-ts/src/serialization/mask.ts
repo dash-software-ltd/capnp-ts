@@ -2,7 +2,7 @@
  * @author jdiaz5513
  */
 
-import { INVARIANT_UNREACHABLE_CODE } from "../errors";
+import { INVARIANT_UNREACHABLE_CODE } from "../errors.js";
 
 type DataViewSetter<T> = (byteOffset: number, value: T, littleEndian?: boolean) => void;
 

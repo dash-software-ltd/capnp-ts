@@ -6,8 +6,8 @@
 /* tslint:disable:no-any no-unsafe-any */
 import initTrace from "debug";
 
-import { MAX_BUFFER_DUMP_BYTES, MAX_INT32, MAX_UINT32 } from "./constants";
-import { RANGE_INT32_OVERFLOW, RANGE_INVALID_UTF8, RANGE_UINT32_OVERFLOW } from "./errors";
+import { MAX_BUFFER_DUMP_BYTES, MAX_INT32, MAX_UINT32 } from "./constants.js";
+import { RANGE_INT32_OVERFLOW, RANGE_INVALID_UTF8, RANGE_UINT32_OVERFLOW } from "./errors.js";
 
 const trace = initTrace("capnp:util");
 trace("load");
@@ -282,7 +282,7 @@ export function format(s: string, ...args: unknown[]): string {
           arg = nextArg();
 
           if (typeof arg === "string" || arg instanceof String) {
-            result += arg;
+            result += String(arg);
           } else {
             result += String.fromCharCode(parseInt(String(arg), 10));
           }
@@ -313,7 +313,7 @@ export function format(s: string, ...args: unknown[]): string {
           break;
 
         case "s": // string
-          result += nextArg();
+          result += nextArg() as string;
 
           break;
 

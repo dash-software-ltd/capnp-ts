@@ -5,17 +5,17 @@ import mkdirp from "mkdirp";
 import path from "path";
 import ts from "typescript";
 
-import { CodeGeneratorContext } from "./code-generator-context";
-import { CodeGeneratorFileContext } from "./code-generator-file-context";
-import { SOURCE_COMMENT } from "./constants";
-import { loadRequestedFile, lookupNode } from "./file";
+import { CodeGeneratorContext } from "./code-generator-context.js";
+import { CodeGeneratorFileContext } from "./code-generator-file-context.js";
+import { SOURCE_COMMENT } from "./constants.js";
+import { loadRequestedFile, lookupNode } from "./file.js";
 import {
   generateCapnpImport,
   generateConcreteListInitializer,
   generateFileId,
   generateNode,
   generateNestedImports,
-} from "./generators";
+} from "./generators.js";
 
 const trace = initTrace("capnpc:compile");
 trace("load");

@@ -1,7 +1,7 @@
 import tap from "tap";
 
 import { Message, ObjectSize, Orphan, Struct } from "capnp-ts";
-import { Int32List } from "capnp-ts/src/serialization";
+import { Int32List } from "capnp-ts/src/serialization/index.js";
 
 /** Just a silly struct that holds a single pointer to... itself? */
 

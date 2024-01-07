@@ -4,21 +4,21 @@
 
 import initTrace from "debug";
 
-import { LIST_SIZE_MASK, MAX_DEPTH, POINTER_DOUBLE_FAR_MASK, POINTER_TYPE_MASK } from "../../constants";
-import { bufferToHex, format, padToWord } from "../../util";
-import { ListElementSize } from "../list-element-size";
+import { LIST_SIZE_MASK, MAX_DEPTH, POINTER_DOUBLE_FAR_MASK, POINTER_TYPE_MASK } from "../../constants.js";
+import { bufferToHex, format, padToWord } from "../../util.js";
+import { ListElementSize } from "../list-element-size.js";
 import {
   ObjectSize,
   getByteLength,
   padToWord as padObjectToWord,
   getWordLength,
   getDataWordLength,
-} from "../object-size";
-import { Segment } from "../segment";
-import { Orphan } from "./orphan";
-import { PointerAllocationResult } from "./pointer-allocation-result";
-import { PointerType } from "./pointer-type";
-import { Message } from "../message";
+} from "../object-size.js";
+import { Segment } from "../segment.js";
+import { Orphan } from "./orphan.js";
+import { PointerAllocationResult } from "./pointer-allocation-result.js";
+import { PointerType } from "./pointer-type.js";
+import { Message } from "../message.js";
 import {
   PTR_TRAVERSAL_LIMIT_EXCEEDED,
   PTR_DEPTH_LIMIT_EXCEEDED,
@@ -30,7 +30,7 @@ import {
   PTR_WRONG_POINTER_TYPE,
   PTR_WRONG_LIST_TYPE,
   INVARIANT_UNREACHABLE_CODE,
-} from "../../errors";
+} from "../../errors.js";
 
 const trace = initTrace("capnp:pointer");
 trace("load");
@@ -877,6 +877,7 @@ export function validate(pointerType: PointerType, p: Pointer, elementSize?: Lis
 
   const A = t.segment.getUint32(t.byteOffset) & POINTER_TYPE_MASK;
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
   if (A !== pointerType) {
     throw new Error(format(PTR_WRONG_POINTER_TYPE, p, pointerType));
   }
@@ -886,6 +887,7 @@ export function validate(pointerType: PointerType, p: Pointer, elementSize?: Lis
   if (elementSize !== undefined) {
     const C = t.segment.getUint32(t.byteOffset + 4) & LIST_SIZE_MASK;
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
     if (C !== elementSize) {
       throw new Error(format(PTR_WRONG_LIST_TYPE, p, ListElementSize[elementSize]));
     }

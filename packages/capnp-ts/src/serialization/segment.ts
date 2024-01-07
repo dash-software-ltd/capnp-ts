@@ -4,11 +4,11 @@
 
 import initTrace from "debug";
 
-import { MAX_SEGMENT_LENGTH, NATIVE_LITTLE_ENDIAN } from "../constants";
-import { SEG_REPLACEMENT_BUFFER_TOO_SMALL, SEG_SIZE_OVERFLOW } from "../errors";
-import { format, padToWord } from "../util";
-import { Message } from "./message";
-import { Pointer } from "./pointers";
+import { MAX_SEGMENT_LENGTH, NATIVE_LITTLE_ENDIAN } from "../constants.js";
+import { SEG_REPLACEMENT_BUFFER_TOO_SMALL, SEG_SIZE_OVERFLOW } from "../errors.js";
+import { format, padToWord } from "../util.js";
+import { Message } from "./message.js";
+import { Pointer } from "./pointers/index.js";
 
 const trace = initTrace("capnp:segment");
 trace("load");

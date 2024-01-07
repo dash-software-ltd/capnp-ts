@@ -1,37 +1,40 @@
 {
+  "name": "capnpc-ts",
+  "version": "0.7.0",
+  "description": "Cap'n Proto schema compiler for TypeScript.",
   "author": "jdiaz5513",
+  "contributors": [
+    "Cameron Clough <cameronjclough@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dash-software-ltd/capnp-ts.git"
+  },
+  "homepage": "https://github.com/dash-software-ltd/capnp-ts#readme",
+  "bugs": {
+    "url": "https://github.com/dash-software-ltd/capnp-ts/issues"
+  },
+  "keywords": [
+    "capnp",
+    "rpc",
+    "typescript"
+  ],
+  "main": "./src/index.js",
+  "type": "module",
+  "types": "./src/index.d.ts",
   "bin": {
     "capnpc-ts": "./bin/capnpc-ts.js"
-  },
-  "bugs": {
-    "url": "https://github.com/jdiaz5513/capnp-ts/issues"
   },
   "dependencies": {
     "capnp-ts": "^0.7.0",
     "debug": "^4.3.1",
     "hex2dec": "^1.1.2",
     "mkdirp": "^1.0.4",
-    "tslib": "^2.2.0",
-    "typescript": "^4.2.4"
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
   },
-  "description": "Cap'n Proto schema compiler for TypeScript.",
   "engines": {
-    "node": ">=10.4.0"
-  },
-  "homepage": "https://github.com/jdiaz5513/capnp-ts#readme",
-  "keywords": [
-    "capnp",
-    "rpc",
-    "typescript"
-  ],
-  "license": "MIT",
-  "main": "./src/index.js",
-  "name": "capnpc-ts",
-  "preferGlobal": true,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jdiaz5513/capnp-ts.git"
-  },
-  "types": "./src/index.d.ts",
-  "version": "0.7.0"
+    "node": "^20"
+  }
 }

@@ -2,8 +2,8 @@
  * @author jdiaz5513
  */
 
-import { PACK_SPAN_THRESHOLD } from "../constants";
-import { MSG_PACK_NOT_WORD_ALIGNED } from "../errors";
+import { PACK_SPAN_THRESHOLD } from "../constants.js";
+import { MSG_PACK_NOT_WORD_ALIGNED } from "../errors.js";
 
 /**
  * When packing a message there are two tags that are interpreted in a special way: `0x00` and `0xff`.
@@ -219,6 +219,7 @@ export function pack(unpacked: ArrayBuffer, byteOffset = 0, byteLength?: number)
       case PackedTag.ZERO:
         // We're writing a range of words with all zeroes in them. See if we need to bail out of the fast path.
 
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
         if (tag !== PackedTag.ZERO || rangeWordCount >= 0xff) {
           // There's a bit in there or we got too many zeroes. Damn, we need to bail.
 
@@ -285,6 +286,7 @@ export function pack(unpacked: ArrayBuffer, byteOffset = 0, byteLength?: number)
 
     // Record the span tag offset if needed, making sure to actually leave room for it.
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
     if (tag === PackedTag.SPAN) {
       spanWordCountOffset = dst.length;
 

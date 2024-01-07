@@ -1,11 +1,11 @@
 import * as s from "capnp-ts/src/std/schema.capnp.js";
-import { format } from "capnp-ts/src/util";
+import { format } from "capnp-ts/src/util.js";
 import initTrace from "debug";
 
-import { CodeGeneratorFileContext } from "./code-generator-file-context";
-import { ConcreteListType } from "./constants";
-import * as E from "./errors";
-import * as util from "./util";
+import { CodeGeneratorFileContext } from "./code-generator-file-context.js";
+import { ConcreteListType } from "./constants.js";
+import * as E from "./errors.js";
+import * as util from "./util.js";
 
 const trace = initTrace("capnpc:file");
 trace("load");

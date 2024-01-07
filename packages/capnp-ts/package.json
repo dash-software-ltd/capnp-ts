@@ -1,29 +1,31 @@
 {
-  "author": "jdiaz5513",
-  "bugs": {
-    "url": "https://github.com/jdiaz5513/capnp-ts/issues"
-  },
-  "dependencies": {
-    "debug": "^4.3.1",
-    "tslib": "^2.2.0"
-  },
+  "name": "capnp-ts",
+  "version": "0.7.0",
   "description": "Strongly typed Cap'n Proto implementation for the browser and Node.js using TypeScript",
-  "engines": {
-    "node": ">=10.4.0"
+  "author": "jdiaz5513",
+  "contributors": ["Cameron Clough <cameronjclough@gmail.com>"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dash-software-ltd/capnp-ts.git"
   },
-  "homepage": "https://github.com/jdiaz5513/capnp-ts#readme",
+  "homepage": "https://github.com/dash-software-ltd/capnp-ts#readme",
+  "bugs": {
+    "url": "https://github.com/dash-software-ltd/capnp-ts/issues"
+  },
   "keywords": [
     "capnp",
     "rpc",
     "typescript"
   ],
-  "license": "MIT",
   "main": "./src/index.js",
-  "name": "capnp-ts",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jdiaz5513/capnp-ts.git"
-  },
+  "type": "module",
   "types": "./src/index.d.ts",
-  "version": "0.7.0"
+  "dependencies": {
+    "debug": "^4.3.1",
+    "tslib": "^2.6.2"
+  },
+  "engines": {
+    "node": "^20"
+  }
 }

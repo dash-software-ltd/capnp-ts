@@ -4,7 +4,7 @@
 
 import initTrace from "debug";
 
-import { Pointer } from "./pointer";
+import { Pointer } from "./pointer.js";
 
 const trace = initTrace("capnp:pointer-allocation-result");
 trace("load");

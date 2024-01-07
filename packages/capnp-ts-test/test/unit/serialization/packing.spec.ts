@@ -11,8 +11,8 @@ import {
   getZeroByteCount,
   pack,
   unpack,
-} from "capnp-ts/src/serialization/packing";
-import { compareBuffers, readFileBuffer } from "../../util";
+} from "capnp-ts/src/serialization/packing.js";
+import { compareBuffers, readFileBuffer } from "../../util/index.js";
 
 type Word = [number, number, number, number, number, number, number, number];
 type TagData = { tag: number; weight: number; word: Word }[];
