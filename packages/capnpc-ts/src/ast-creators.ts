@@ -4,14 +4,16 @@
 
 import * as s from "capnp-ts/src/std/schema.capnp.js";
 import * as capnp from "capnp-ts";
-import { format, pad } from "capnp-ts/src/util";
-import ts, { factory as f } from "typescript";
+import { format, pad } from "capnp-ts/src/util.js";
+import ts from "typescript";
 import initTrace from "debug";
-import { CodeGeneratorFileContext } from "./code-generator-file-context";
-import { __, READONLY, STATIC, VOID_TYPE, CAPNP } from "./constants";
-import * as E from "./errors";
-import { getDisplayNamePrefix, getFullClassName, getJsType } from "./file";
-import * as util from "./util";
+import { CodeGeneratorFileContext } from "./code-generator-file-context.js";
+import { __, READONLY, STATIC, VOID_TYPE, CAPNP } from "./constants.js";
+import * as E from "./errors.js";
+import { getDisplayNamePrefix, getFullClassName, getJsType } from "./file.js";
+import * as util from "./util.js";
+
+const f = ts.factory;
 
 const trace = initTrace("capnpc:ast-creators");
 
@@ -24,14 +26,14 @@ export function createConcreteListProperty(ctx: CodeGeneratorFileContext, field:
   const name = `_${util.c2t(field.getName())}`;
   const type = f.createTypeReferenceNode(getJsType(ctx, field.getSlot().getType(), true), __);
   let u: ts.Expression | undefined;
-  return f.createPropertyDeclaration(__, [STATIC], name, __, type, u as ts.Expression);
+  return f.createPropertyDeclaration([STATIC], name, __, type, u as ts.Expression);
 }
 
 export function createConstProperty(node: s.Node): ts.PropertyDeclaration {
   const name = util.c2s(getDisplayNamePrefix(node));
   const initializer = createValueExpression(node.getConst().getValue());
 
-  return f.createPropertyDeclaration(__, [STATIC, READONLY], name, __, __, initializer);
+  return f.createPropertyDeclaration([STATIC, READONLY], name, __, __, initializer);
 }
 
 export function createExpressionBlock(
@@ -56,7 +58,6 @@ export function createMethod(
   return f.createMethodDeclaration(
     __,
     __,
-    __,
     name,
     __,
     __,
@@ -70,14 +71,14 @@ export function createNestedNodeProperty(node: s.Node): ts.PropertyDeclaration {
   const name = getDisplayNamePrefix(node);
   const initializer = f.createIdentifier(getFullClassName(node));
 
-  return f.createPropertyDeclaration(__, [STATIC, READONLY], name, __, __, initializer);
+  return f.createPropertyDeclaration([STATIC, READONLY], name, __, __, initializer);
 }
 
 export function createUnionConstProperty(fullClassName: string, field: s.Field): ts.PropertyDeclaration {
   const name = field.getName();
   const initializer = f.createPropertyAccessExpression(f.createIdentifier(`${fullClassName}_Which`), name);
 
-  return f.createPropertyDeclaration(__, [STATIC, READONLY], name, __, __, initializer);
+  return f.createPropertyDeclaration([STATIC, READONLY], name, __, __, initializer);
 }
 
 export function createValueExpression(value: s.Value): ts.Expression {

@@ -3,13 +3,13 @@
  */
 
 import initTrace from "debug";
-import { assertNever } from "../../errors";
-import { Segment } from "../segment";
-import { AnyArena } from "./any-arena";
-import { ArenaAllocationResult } from "./arena-allocation-result";
-import { ArenaKind } from "./arena-kind";
-import { MultiSegmentArena } from "./multi-segment-arena";
-import { SingleSegmentArena } from "./single-segment-arena";
+import { assertNever } from "../../errors.js";
+import { Segment } from "../segment.js";
+import { AnyArena } from "./any-arena.js";
+import { ArenaAllocationResult } from "./arena-allocation-result.js";
+import { ArenaKind } from "./arena-kind.js";
+import { MultiSegmentArena } from "./multi-segment-arena.js";
+import { SingleSegmentArena } from "./single-segment-arena.js";
 
 const trace = initTrace("capnp:arena");
 trace("load");

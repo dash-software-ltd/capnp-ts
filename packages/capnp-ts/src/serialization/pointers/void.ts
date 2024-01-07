@@ -2,8 +2,8 @@
  * @author jdiaz5513
  */
 
-import { ObjectSize } from "../object-size";
-import { _StructCtor, Struct } from "./struct";
+import { ObjectSize } from "../object-size.js";
+import { _StructCtor, Struct } from "./struct.js";
 
 export class Void extends Struct {
   static readonly _capnp: _StructCtor = {

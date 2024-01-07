@@ -4,7 +4,9 @@
 
 import * as s from "capnp-ts/src/std/schema.capnp.js";
 import initTrace from "debug";
-import ts, { factory as f } from "typescript";
+import ts from "typescript";
+
+const f = ts.factory;
 
 const trace = initTrace("capnpc:constants");
 trace("load");
@@ -172,7 +174,7 @@ export const STRING_TYPE = f.createTypeReferenceNode("string", __);
 
 /** __S */
 // This is referenced so frequently it gets a shorthand!
-export const STRUCT = ts.createIdentifier("__S");
+export const STRUCT = f.createIdentifier("__S");
 
 /** this */
 

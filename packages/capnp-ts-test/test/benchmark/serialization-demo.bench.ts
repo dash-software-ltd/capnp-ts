@@ -7,11 +7,12 @@ import { readFileSync } from "fs";
 import * as path from "path";
 
 import * as capnp from "capnp-ts";
-import { decodeUtf8 } from "capnp-ts/src/util";
-import { AddressBook } from "../integration/serialization-demo";
-import { logBench, readFileBuffer } from "../util";
+import { decodeUtf8 } from "capnp-ts/src/util.js";
+import { AddressBook } from "../integration/serialization-demo.js";
+import { logBench, readFileBuffer } from "../util/index.js";
 
 const jsonBuffer = new Uint8Array(readFileBuffer("test/data/serialization-demo.json"));
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 const jsonString = readFileSync(path.join(__dirname, "../../", "test/data/serialization-demo.json"), "utf-8");
 const messageData = readFileBuffer("test/data/serialization-demo.bin");
 // Let's preprocess it so we have just the raw segment data.

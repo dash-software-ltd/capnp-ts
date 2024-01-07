@@ -5,8 +5,8 @@
 import tap from "tap";
 
 import * as capnp from "capnp-ts";
-import { compareBuffers, readFileBuffer } from "../util";
-import { AddressBook, Person } from "./serialization-demo";
+import { compareBuffers, readFileBuffer } from "../util/index.js";
+import { AddressBook, Person } from "./serialization-demo.js";
 
 const SERIALIZATION_DEMO = readFileBuffer("test/data/serialization-demo.bin");
 

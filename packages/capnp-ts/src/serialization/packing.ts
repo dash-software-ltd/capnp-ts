@@ -2,8 +2,8 @@
  * @author jdiaz5513
  */
 
-import { PACK_SPAN_THRESHOLD } from "../constants";
-import { MSG_PACK_NOT_WORD_ALIGNED } from "../errors";
+import { PACK_SPAN_THRESHOLD } from "../constants.js";
+import { MSG_PACK_NOT_WORD_ALIGNED } from "../errors.js";
 
 /**
  * When packing a message there are two tags that are interpreted in a special way: `0x00` and `0xff`.

@@ -4,11 +4,11 @@
 
 import initTrace from "debug";
 
-import { decodeUtf8, encodeUtf8 } from "../../util";
-import { ListElementSize } from "../list-element-size";
-import { List, initList } from "./list";
-import { Pointer, validate, isNull, getContent, erase } from "./pointer";
-import { PointerType } from "./pointer-type";
+import { decodeUtf8, encodeUtf8 } from "../../util.js";
+import { ListElementSize } from "../list-element-size.js";
+import { List, initList } from "./list.js";
+import { Pointer, validate, isNull, getContent, erase } from "./pointer.js";
+import { PointerType } from "./pointer-type.js";
 
 const trace = initTrace("capnp:text");
 trace("load");

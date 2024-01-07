@@ -3,6 +3,6 @@
  * compiled output.
  */
 
-import * as capnp from "../index";
-import { ObjectSize as __O, Struct as __S } from "../index";
+import * as capnp from "../index.js";
+import { ObjectSize as __O, Struct as __S } from "../index.js";
 export const _capnpFileId = BigInt("0x814e30b87b7df8bd");

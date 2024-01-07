@@ -4,10 +4,10 @@
 
 import initTrace from "debug";
 
-import { ListElementSize } from "../list-element-size";
-import { List } from "./list";
-import { Pointer, validate, getContent } from "./pointer";
-import { PointerType } from "./pointer-type";
+import { ListElementSize } from "../list-element-size.js";
+import { List } from "./list.js";
+import { Pointer, validate, getContent } from "./pointer.js";
+import { PointerType } from "./pointer-type.js";
 
 const trace = initTrace("capnp:data");
 trace("load");

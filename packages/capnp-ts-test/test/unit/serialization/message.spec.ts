@@ -1,11 +1,11 @@
 import tap from "tap";
 
-import * as C from "capnp-ts/src/constants";
-import { Message } from "capnp-ts/src/serialization";
-import { MultiSegmentArena } from "capnp-ts/src/serialization/arena";
-import { getFramedSegments, preallocateSegments } from "capnp-ts/src/serialization/message";
-import { Person } from "../../integration/serialization-demo";
-import { compareBuffers, readFileBuffer } from "../../util";
+import * as C from "capnp-ts/src/constants.js";
+import { Message } from "capnp-ts/src/serialization/index.js";
+import { MultiSegmentArena } from "capnp-ts/src/serialization/arena/index.js";
+import { getFramedSegments, preallocateSegments } from "capnp-ts/src/serialization/message.js";
+import { Person } from "../../integration/serialization-demo.js";
+import { compareBuffers, readFileBuffer } from "../../util/index.js";
 
 const SEGMENTED_PACKED = readFileBuffer("test/data/segmented-packed.bin");
 const SEGMENTED_UNPACKED = readFileBuffer("test/data/segmented.bin");

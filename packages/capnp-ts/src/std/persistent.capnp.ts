@@ -3,8 +3,8 @@
  * compiled output.
  */
 
-import * as capnp from "../index";
-import { ObjectSize as __O, Struct as __S } from "../index";
+import * as capnp from "../index.js";
+import { ObjectSize as __O, Struct as __S } from "../index.js";
 export const _capnpFileId = "b8630836983feed7";
 export class Persistent_SaveParams extends __S {
     static readonly _capnp = { displayName: "SaveParams", id: "f76fba59183073a5", size: new __O(0, 1) };

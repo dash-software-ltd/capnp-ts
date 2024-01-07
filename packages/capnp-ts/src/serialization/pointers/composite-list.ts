@@ -4,10 +4,10 @@
 
 import initTrace from "debug";
 
-import { ListElementSize } from "../list-element-size";
-import { _ListCtor, List, ListCtor } from "./list";
-import { Struct, StructCtor } from "./struct";
-import { copyFrom } from "./pointer";
+import { ListElementSize } from "../list-element-size.js";
+import { _ListCtor, List, ListCtor } from "./list.js";
+import { Struct, StructCtor } from "./struct.js";
+import { copyFrom } from "./pointer.js";
 
 const trace = initTrace("capnp:list:composite");
 trace("load");

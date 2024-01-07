@@ -4,14 +4,14 @@
 
 import initTrace from "debug";
 
-import { MAX_DEPTH, NATIVE_LITTLE_ENDIAN } from "../../constants";
-import { format, padToWord } from "../../util";
-import { ListElementSize } from "../list-element-size";
-import { ObjectSize, getByteLength, getDataWordLength, getWordLength } from "../object-size";
-import { Segment } from "../segment";
-import { Data } from "./data";
-import { List, ListCtor } from "./list";
-import { Orphan } from "./orphan";
+import { MAX_DEPTH, NATIVE_LITTLE_ENDIAN } from "../../constants.js";
+import { format, padToWord } from "../../util.js";
+import { ListElementSize } from "../list-element-size.js";
+import { ObjectSize, getByteLength, getDataWordLength, getWordLength } from "../object-size.js";
+import { Segment } from "../segment.js";
+import { Data } from "./data.js";
+import { List, ListCtor } from "./list.js";
+import { Orphan } from "./orphan.js";
 import {
   _Pointer,
   _PointerCtor,
@@ -32,9 +32,9 @@ import {
   getTargetStructSize,
   validate,
   copyFrom,
-} from "./pointer";
-import { PointerType } from "./pointer-type";
-import { Text } from "./text";
+} from "./pointer.js";
+import { PointerType } from "./pointer-type.js";
+import { Text } from "./text.js";
 import {
   PTR_INIT_COMPOSITE_STRUCT,
   PTR_ADOPT_COMPOSITE_STRUCT,
@@ -43,7 +43,7 @@ import {
   PTR_STRUCT_DATA_OUT_OF_BOUNDS,
   PTR_STRUCT_POINTER_OUT_OF_BOUNDS,
   INVARIANT_UNREACHABLE_CODE,
-} from "../../errors";
+} from "../../errors.js";
 
 const trace = initTrace("capnp:struct");
 trace("load");

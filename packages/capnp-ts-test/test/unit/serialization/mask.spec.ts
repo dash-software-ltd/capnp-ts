@@ -1,6 +1,6 @@
 import tap from "tap";
 
-import { MAX_SAFE_INTEGER, MIN_SAFE_INTEGER } from "capnp-ts/src/constants";
+import { MAX_SAFE_INTEGER, MIN_SAFE_INTEGER } from "capnp-ts/src/constants.js";
 import {
   getBitMask,
   getFloat32Mask,
@@ -13,8 +13,8 @@ import {
   getUint32Mask,
   getUint64Mask,
   getUint8Mask,
-} from "capnp-ts/src/serialization/mask";
-import { compareBuffers } from "../../util";
+} from "capnp-ts/src/serialization/mask.js";
+import { compareBuffers } from "../../util/index.js";
 
 type MaskArray<T> = Array<{ mask: number[]; val: T }>;
 

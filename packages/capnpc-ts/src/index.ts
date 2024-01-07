@@ -1,11 +1,12 @@
-import * as capnp from "capnp-ts";
-import * as s from "capnp-ts/src/std/schema.capnp.js";
 import initTrace from "debug";
 import * as fs from "fs";
 import ts from "typescript";
-import { CodeGeneratorContext } from "./code-generator-context";
-import { loadRequest, writeTsFiles } from "./compiler";
-import * as E from "./errors";
+
+import * as capnp from "capnp-ts";
+import * as s from "capnp-ts/src/std/schema.capnp.js";
+import { CodeGeneratorContext } from "./code-generator-context.js";
+import { loadRequest, writeTsFiles } from "./compiler.js";
+import * as E from "./errors.js";
 
 const trace = initTrace("capnpc");
 trace("load");
@@ -20,8 +21,8 @@ trace("load");
  */
 const COMPILE_OPTIONS: ts.CompilerOptions = {
   declaration: true,
-  module: ts.ModuleKind.None,
-  moduleResolution: ts.ModuleResolutionKind.NodeJs,
+  module: ts.ModuleKind.ESNext,
+  moduleResolution: ts.ModuleResolutionKind.Bundler,
   noEmitOnError: false,
   noFallthroughCasesInSwitch: true,
   noImplicitReturns: true,
@@ -33,7 +34,7 @@ const COMPILE_OPTIONS: ts.CompilerOptions = {
   sourceMap: false,
   strict: true,
   stripInternal: true,
-  target: ts.ScriptTarget.ES2015,
+  target: ts.ScriptTarget.ESNext,
 };
 
 export async function main(): Promise<void> {

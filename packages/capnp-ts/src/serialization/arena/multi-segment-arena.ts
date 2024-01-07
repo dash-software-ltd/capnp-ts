@@ -3,11 +3,11 @@
  */
 
 import initTrace from "debug";
-import { DEFAULT_BUFFER_SIZE } from "../../constants";
-import { SEG_ID_OUT_OF_BOUNDS } from "../../errors";
-import { padToWord, format } from "../../util";
-import { ArenaAllocationResult } from "./arena-allocation-result";
-import { ArenaKind } from "./arena-kind";
+import { DEFAULT_BUFFER_SIZE } from "../../constants.js";
+import { SEG_ID_OUT_OF_BOUNDS } from "../../errors.js";
+import { padToWord, format } from "../../util.js";
+import { ArenaAllocationResult } from "./arena-allocation-result.js";
+import { ArenaKind } from "./arena-kind.js";
 
 const trace = initTrace("capnp:arena:multi");
 trace("load");

@@ -1,8 +1,8 @@
 {
   "name": "capnp-ts",
   "description": "Strongly typed Cap'n Proto implementation for the browser and Node.js using TypeScript",
-  "author": "Cameron Clough <cameronjclough@gmail.com>",
-  "contributors": ["jdiaz5513"],
+  "author": "jdiaz5513",
+  "contributors": ["Cameron Clough <cameronjclough@gmail.com>"],
   "homepage": "https://github.com/dash-software-ltd/capnp-ts#readme",
   "bugs": {
     "url": "https://github.com/dash-software-ltd/capnp-ts/issues"
@@ -36,7 +36,7 @@
     "tap": "^15.0.9",
     "testcheck": "^1.0.0-rc.2",
     "ts-node": "^9.1.1",
-    "typescript": "^4.9.5"
+    "typescript": "^5.3.3"
   },
   "husky": {
     "hooks": {
@@ -66,7 +66,6 @@
   },
   "scripts": {
     "cereal": "capnpc -o ./packages/capnpc-ts/bin/capnpc-ts.js:./gen ./third_party/cereal/*capnp",
-    "cereal2": "make build && capnpc -o ./packages/capnpc-ts/bin/capnpc-ts.js:./gen ./third_party/cereal/*capnp",
     "benchmark": "make benchmark",
     "build": "make build",
     "build:watch": "npm run nodemon make build",

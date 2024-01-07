@@ -4,11 +4,11 @@
 
 import initTrace from "debug";
 
-import { PTR_COMPOSITE_SIZE_UNDEFINED, PTR_INVALID_LIST_SIZE } from "../../errors";
-import { format, identity } from "../../util";
-import { ListElementSize } from "../list-element-size";
-import { ObjectSize, padToWord, getByteLength } from "../object-size";
-import { Segment } from "../segment";
+import { PTR_COMPOSITE_SIZE_UNDEFINED, PTR_INVALID_LIST_SIZE } from "../../errors.js";
+import { format, identity } from "../../util.js";
+import { ListElementSize } from "../list-element-size.js";
+import { ObjectSize, padToWord, getByteLength } from "../object-size.js";
+import { Segment } from "../segment.js";
 import {
   Pointer,
   getTargetListLength,
@@ -16,7 +16,7 @@ import {
   setStructPointer,
   setListPointer,
   initPointer,
-} from "./pointer";
+} from "./pointer.js";
 
 const trace = initTrace("capnp:list");
 trace("load");
