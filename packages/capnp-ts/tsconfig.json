@@ -1,26 +1,7 @@
 {
   "compilerOptions": {
-    "declaration": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "lib": ["ESNext"],
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "newLine": "lf",
-    "noEmit": false,
-    "noEmitOnError": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": true,
-    "pretty": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "strict": true,
-    "stripInternal": true,
-    "target": "ESNext"
+    "noEmit": false
   },
+  "extends": "../../tsconfig.json",
   "include": ["src/**/*", "test/**/*"]
 }
