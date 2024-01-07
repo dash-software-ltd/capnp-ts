@@ -282,7 +282,7 @@ export function format(s: string, ...args: unknown[]): string {
           arg = nextArg();
 
           if (typeof arg === "string" || arg instanceof String) {
-            result += arg;
+            result += String(arg);
           } else {
             result += String.fromCharCode(parseInt(String(arg), 10));
           }
@@ -313,7 +313,7 @@ export function format(s: string, ...args: unknown[]): string {
           break;
 
         case "s": // string
-          result += nextArg();
+          result += nextArg() as string;
 
           break;
 

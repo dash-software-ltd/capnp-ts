@@ -877,6 +877,7 @@ export function validate(pointerType: PointerType, p: Pointer, elementSize?: Lis
 
   const A = t.segment.getUint32(t.byteOffset) & POINTER_TYPE_MASK;
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
   if (A !== pointerType) {
     throw new Error(format(PTR_WRONG_POINTER_TYPE, p, pointerType));
   }
@@ -886,6 +887,7 @@ export function validate(pointerType: PointerType, p: Pointer, elementSize?: Lis
   if (elementSize !== undefined) {
     const C = t.segment.getUint32(t.byteOffset + 4) & LIST_SIZE_MASK;
 
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-enum-comparison
     if (C !== elementSize) {
       throw new Error(format(PTR_WRONG_LIST_TYPE, p, ListElementSize[elementSize]));
     }
